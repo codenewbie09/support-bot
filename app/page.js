@@ -16,7 +16,7 @@ export default function Home() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: "Hi! I'm the Software Support Assistant. How can I help you today?",
+      content: "Hi! I'm the Customer Support Assistant. How can I help you today?",
     },
   ]);
   const [message, setMessage] = useState('');
@@ -47,7 +47,7 @@ export default function Home() {
     setMessages((prevMessages) => [
       ...prevMessages,
       { role: 'user', content: userMessage },
-      { role: 'assistant', content: '' }, // Placeholder for the assistant's response
+      { role: 'assistant', content: '' },
     ]);
   
     setIsLoading(true);
@@ -155,7 +155,7 @@ export default function Home() {
                 boxShadow="0 2px 6px rgba(0, 0, 0, 0.1)"
                 maxWidth="80%"
               >
-                {msg.content || '...'} {/* Show a placeholder if content is empty */}
+                {msg.content || '...'} {}
               </Box>
             </Box>
           ))}
@@ -200,7 +200,7 @@ export default function Home() {
           autoHideDuration={6000}
           onClose={() => setError(null)}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-          sx={{ marginBottom: 2 }} // Adjust margin for better positioning
+          sx={{ marginBottom: 2 }}
         >
           <Alert
             onClose={() => setError(null)}
